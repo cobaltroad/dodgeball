@@ -10,7 +10,7 @@
 </head> 
 <body>
 	<!-- Profile -->
-	<div data-role="page" id="profile" data-theme="b">
+	<div data-role="page" id="profile" data-theme="b" class="profile">
 		<div data-role="header" data-position="inline">
 			<a href="#sales">+ Sales</a>
 			<h1>Dodgeball</h1>
@@ -38,9 +38,8 @@
 	<!-- Players -->
 	<div data-role="page" id="teammates" data-theme="b">
 		<div data-role="header" data-position="inline">
-			<a href="#sales">+ Sales</a>
+			<a href="#profile" data-rel="back">back</a>
 			<h1>Dodgeball</h1>
-			<a href="#addLeads">+ Leads</a>
 		</div><!-- /header -->
 			<ul data-role="listview" data-filter="true">
 				<li>
@@ -75,10 +74,30 @@
 		</div><!-- /content -->
 	</div><!-- /page -->
 	
+
+	<!-- sales -->
+	<div data-role="page" id="sales" data-theme="b">
+			<div data-role="header" data-position="inline">
+				<a href="#profile" data-rel="back">back</a>
+				<h1>Dodgeball</h1>
+			</div><!-- /header -->
+			<div data-role="content" data-theme="c">
+				<div data-role="fieldcontain">
+					<input type="text" name="name" id="name" placeholder="Product" required>
+					<input type="number" name="email" id="email" placeholder="Amount" required>
+					<textarea cols="40" rows="8" name="notes" id="notes" placeholder="Notes"></textarea>
+					<a href="index.html" data-role="button" input-type="submit" data-theme="b">Submit</a>
+				</div>
+			</div>
+		</div><!-- /content -->
+	</div><!-- /page -->
+	
+	
+	
 	<!-- addLeads -->
 	<div data-role="page" id="addLeads" data-theme="b">
 			<div data-role="header" data-position="inline">
-				<a href="#profile">back</a>
+				<a href="#profile" data-rel="back">back</a>
 				<h1>Dodgeball</h1>
 			</div><!-- /header -->
 			<div data-role="content" data-theme="c">
@@ -90,17 +109,76 @@
 					<input type="text" name="company" id="company" placeholder="Company" required>
 					<input type="text" name="address" id="address" placeholder="Address">
 					<textarea cols="40" rows="8" name="notes" id="notes" placeholder="Notes"></textarea>
-					<a href="index.html" data-role="button" input-type="submit">Submit</a>
+					<a href="index.html" data-role="button" input-type="submit" data-theme="b">Submit</a>
 				</div>
 			</div>
 		</div><!-- /content -->
 	</div><!-- /page -->
 
-
+	<!-- Leads -->
+	<div data-role="page" id="leads" data-theme="b">
+		<div data-role="header" data-position="inline">
+			<a href="#profile" data-rel="back">back</a>
+			<h1>Dodgeball</h1>
+		</div><!-- /header -->
+			<ul data-role="listview" data-filter="true">
+				<li data-role="list-divider">B</li>
+				<li>
+					<a href="#biebs"><img src="img/biebs.png" alt="biebs" width="80" height="80" />
+					<h2>Justin Bieber</h2>
+					<p><b>Interscope</b></p>
+					<p>Singer</p>
+					</a>
+				</li>
+				<li data-role="list-divider">G</li>
+				<li>
+					<a href="#gaga"><img src="img/gaga.png" alt="gaga" width="80" height="80" />
+					<h2>Lady GaGa</h2>
+					<p><b>Interscope</b></p>
+					<p>Singer</p>
+					</a>
+				</li>
+				<li data-role="list-divider">K</li>
+				<li>
+					<a href="#kanye"><img src="img/kanye.png" alt="kanye" width="80" height="80" />
+					<h2>Kanye West</h2>
+					<p><b>GOOD Music</b></p>
+					<p>Hip Hop</p>
+					</a>
+				</li>
+				<li data-role="list-divider">Z</li>
+				<li>
+					<a href="#"><img src="img/jz.png" alt="jz" width="80" height="80" />
+					<h2>Jay Z</h2>
+					<p><b>Roc-A-Fella Records</b></p>
+					<p>Hip Hop</p>
+					</a>
+				</li>
+			</ul>
+		</div><!-- /content -->
+	</div><!-- /page -->
 	
 	
-
-	
+	<!-- biebs -->
+	<div data-role="page" id="biebs" data-theme="b" class="profile">
+		<div data-role="header" data-position="inline">
+			<a href="#leads" data-rel="back">back</a>
+			<h1>Dodgeball</h1>
+		</div><!-- /header -->
+		<div data-role="content" data-scroll="true" data-theme="c">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><img src="img/biebs.png" alt="bibs" width="80" height="80" /></div>
+				<div class="ui-block-b">
+					<h2>Justin Bieber</h2>
+					<p>Interscope</p>
+					<p>Singer</p>
+				</div>	   
+			</fieldset>
+			<a href="mailto:justinbieber@gmail.com" data-role="button" data-theme="c">Email</a>
+			<a href="tel:555-555-5555" data-role="button" data-theme="c" >Call</a>
+		</div>
+	</div><!-- /content -->
+	</div><!-- /page -->
 
 </body>
 </html>
