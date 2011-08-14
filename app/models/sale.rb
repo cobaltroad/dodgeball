@@ -33,4 +33,12 @@ class Sale < ActiveRecord::Base
     player.save!
   end
 
+  def sale_player
+    player.attributes
+  end
+
+  def as_json(options={})
+    super(options.merge(:methods => [:sale_player]))
+  end
+
 end
