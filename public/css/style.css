@@ -6,9 +6,32 @@ div.profile p:nth-of-type(2) { font-size: 14px; margin-top: -10px; text-indent: 
 .center { margin: 0 auto; padding: 0; text-align: center;}
 
 .ui-listview-filter { margin: 0px;}
+<<<<<<< HEAD
 div#teammates h2, div#leads h2 { margin: -2px 0 10px 0;}
 div#teammates p, div#leads p { margin: 0px;}
 
 input:nth-of-type(1) { margin: -10px 0 0 0; }
 input { margin: 15px 0 0 0; }
 textarea { margin: 15px 0 15px 0; }
+=======
+div#teammates h2 { margin: -2px 0 10px 0;}
+div#teammates p { margin: 0px;}
+
+#score_board {
+margin: 0px auto;
+}
+
+#score_board ul li{
+list-style: none;
+max-width: 50%;
+float: left;
+}
+
+#score_board span {
+font-size:10px;
+font-style: italic;}
+
+#clear {
+clear: both;
+}
+>>>>>>> Chris' Commit's

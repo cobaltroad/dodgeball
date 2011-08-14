@@ -7,6 +7,32 @@
 	<link rel="stylesheet" href="css/import.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 	<script type="text/javascript" src="jqm/jquery.mobile-1.0b1.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+	$.get("http://dodgeball.heroku.com/players/1.json", function(data){
+	$('#name').append(data.player.name);
+	$('#player_role').append(data.player.role);  
+	});	
+	
+	$.get("http://dodgeball.heroku.com/teams/1.json", function(data){
+	$('[id^=team_1_name]').append(data.team.name); 
+	$('[id^=team_1_points]').append(data.team.points); 
+ 
+	});	
+	
+	$.get("http://dodgeball.heroku.com/teams/2.json", function(data){
+	$('[id^=team_2_name]').append(data.team.name); 
+	$('[id^=team_2_points]').append(data.team.points); 
+  
+ 
+	});	
+
+	
+ 	});
+	</script>
+
+	
 </head> 
 <body>
 	<!-- Profile -->
@@ -20,14 +46,33 @@
 			<fieldset class="ui-grid-a">
 				<div class="ui-block-a"><img src="img/blake.png" alt="blake" width="80" height="80" /></div>
 				<div class="ui-block-b">
-					<h2>Blake Crosley</h2>
-					<p>Betterworks Sales</p>
-					<p>Team Kick Ass</p>
+					<h2 id="name"></h2>
+					<p id="player_role"></p>
+					<p id="player_team"></p>
 				</div>	   
 			</fieldset>
-			<div data-role="content" data-scroll="true" data-theme="">
-				<h2 class="center">Team Kick Ass</h2>
-				<h2 class="points center">37 Points!</h2>
+			<div data-role="content" data-scroll="true" data-theme="" id="score_board" >
+				<ul class="center">
+					<li>
+						<span>You</span>
+						<h2 class="center" id="team_1_name"></h2>
+						<img src=""/>
+						<h2 class="points center" id="team_1_points"></h2>
+					</li>	
+					
+					<li>
+						<span>Them</span>
+						<h2 class="center" id="team_2_name"></h2>
+						<img src=""/>
+						<h2 class="points center" id="team_2_points"></h2>
+					</li>
+				
+				</ul>
+			
+				</span>
+				
+				
+				
 			</div>
 			<a href="#teammates" data-role="button" data-theme="b" >Team Mates</a>
 			<a href="#leads" data-role="button" data-theme="b" >Leads</a>
