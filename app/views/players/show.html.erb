@@ -2,6 +2,8 @@
 
 <h1><%= @player.name %></h1>
 <h3><%= @player.role %></h3>
+<p><em><%= @player.team.nil? ? "Unassigned" : @player.team.name %></em></p>
+<p><em><%= @player.points %> points</em></p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

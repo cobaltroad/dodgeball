@@ -2,6 +2,9 @@
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Player Points (Team Points)</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +14,7 @@
   <tr>
     <td><h3><%= player.name %></h3></td>
     <td><em><%= player.role %></em></td>
+    <td><em><%= player.points %> (<%= player.team.nil? ? "Unassigned" : player.team.points %>)</em></td>
     <td><em><%= link_to 'Edit', edit_player_path(player) %></em></td>
     <td><em><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></em></td>
   </tr>

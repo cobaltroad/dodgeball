@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product name:</b>
+  <%= @sale.product_name %>
+</p>
+
+<p>
+  <b>Sale amount in cents:</b>
+  <%= @sale.sale_amount_in_cents %>
+</p>
+
+<p>
+  <b>Positive Feedback:</b>
+  <%= @sale.positive_feedback? %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @sale.notes %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @sale.player.name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>

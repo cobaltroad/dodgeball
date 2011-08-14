@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  product_name: MyString
+  sale_amount_in_cents: 1
+  notes: MyText
+  player: 
+
+two:
+  product_name: MyString
+  sale_amount_in_cents: 1
+  notes: MyText
+  player: 
