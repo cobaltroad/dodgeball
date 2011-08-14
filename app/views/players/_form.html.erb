@@ -13,6 +13,7 @@
 
   <p><%= f.label :name %>&nbsp;<%= f.text_field :name %></p>
   <p><%= f.label :role %>&nbsp;<%= f.text_field :role %></p>
+  <p><%= f.label :team %>&nbsp;<%= f.collection_select(:team_id, Team.all, :id, :name, :include_blank => "Unassigned") %></p>
 
   <div class="actions">
     <%= f.submit %>

@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Points</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @teams.each do |team| %>
   <tr>
     <td><%= team.name %></td>
+    <td><%= team.points %></td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
