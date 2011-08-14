@@ -1,4 +1,6 @@
 Hackathon::Application.routes.draw do
+  resources :rules
+
   resources :players
 
   resources :teams
