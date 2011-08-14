@@ -1,0 +1,229 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Dodgeball</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.0b1.css" />
+	<link rel="stylesheet" href="css/import.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="jqm/jquery.mobile-1.0b1.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+	$.get("http://dodgeball.heroku.com/players/1.json", function(data){
+	$('#name').append(data.player.name);
+	$('#player_role').append(data.player.role);  
+	});	
+	
+	$.get("http://dodgeball.heroku.com/teams/1.json", function(data){
+	$('[id^=team_1_name]').append(data.team.name); 
+	$('[id^=team_1_points]').append(data.team.points); 
+ 
+	});	
+	
+	$.get("http://dodgeball.heroku.com/teams/2.json", function(data){
+	$('[id^=team_2_name]').append(data.team.name); 
+	$('[id^=team_2_points]').append(data.team.points); 
+  
+ 
+	});	
+
+	
+ 	});
+	</script>
+
+	
+</head> 
+<body>
+	<!-- Profile -->
+	<div data-role="page" id="profile" data-theme="b" class="profile">
+		<div data-role="header" data-position="inline">
+			<a href="#sales">+ Sales</a>
+			<h1>Dodgeball</h1>
+			<a href="#addLeads">+ Leads</a>
+		</div><!-- /header -->
+		<div data-role="content" data-scroll="true" data-theme="c">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><img src="img/blake.png" alt="blake" width="80" height="80" /></div>
+				<div class="ui-block-b">
+					<h2 id="name"></h2>
+					<p id="player_role"></p>
+					<p id="player_team"></p>
+				</div>	   
+			</fieldset>
+			<div data-role="content" data-scroll="true" data-theme="" id="score_board" >
+				<ul class="center">
+					<li>
+						<span>You</span>
+						<h2 class="center" id="team_1_name"></h2>
+						<img src=""/>
+						<h2 class="points center" id="team_1_points"></h2>
+					</li>	
+					
+					<li>
+						<span>Them</span>
+						<h2 class="center" id="team_2_name"></h2>
+						<img src=""/>
+						<h2 class="points center" id="team_2_points"></h2>
+					</li>
+				
+				</ul>
+			
+				</span>
+				
+				
+				
+			</div>
+			<a href="#teammates" data-role="button" data-theme="b" >Team Mates</a>
+			<a href="#leads" data-role="button" data-theme="b" >Leads</a>
+		</div>
+	</div><!-- /content -->
+	</div><!-- /page -->
+
+	<!-- Players -->
+	<div data-role="page" id="teammates" data-theme="b">
+		<div data-role="header" data-position="inline">
+			<a href="#profile" data-rel="back">back</a>
+			<h1>Dodgeball</h1>
+		</div><!-- /header -->
+			<ul data-role="listview" data-filter="true">
+				<li>
+					<a href="#phillip"><img src="img/phillip.png" alt="phillip" width="80" height="80" />
+					<h2>Phillip</h2>
+					<p><b>Betterworks Sales</b></p>
+					<p>Team Kick Ass</p>
+					</a>
+				</li>
+				<li>
+					<a href="#chris"><img src="img/ron.png" alt="ron" width="80" height="80" />
+					<h2>Ron</h2>
+					<p><b>Betterworks Sales</b></p>
+					<p>Team Kick Ass</p>
+					</a>
+				</li>
+				<li>
+					<a href="#chris"><img src="img/chris.png" alt="chris" width="80" height="80" />
+					<h2>Chris</h2>
+					<p><b>Betterworks Sales</b></p>
+					<p>Team Kick Ass</p>
+					</a>
+				</li>
+				<li>
+					<a href="#blake"><img src="img/blake.png" alt="blake" width="80" height="80" />
+					<h2>Blake Crosley</h2>
+					<p><b>Betterworks Sales</b></p>
+					<p>Team Kick Ass</p>
+					</a>
+				</li>
+			</ul>
+		</div><!-- /content -->
+	</div><!-- /page -->
+	
+
+	<!-- sales -->
+	<div data-role="page" id="sales" data-theme="b">
+			<div data-role="header" data-position="inline">
+				<a href="#profile" data-rel="back">back</a>
+				<h1>Dodgeball</h1>
+			</div><!-- /header -->
+			<div data-role="content" data-theme="c">
+				<div data-role="fieldcontain">
+					<input type="text" name="name" id="name" placeholder="Product" required>
+					<input type="number" name="email" id="email" placeholder="Amount" required>
+					<textarea cols="40" rows="8" name="notes" id="notes" placeholder="Notes"></textarea>
+					<a href="index.html" data-role="button" input-type="submit" data-theme="b">Submit</a>
+				</div>
+			</div>
+		</div><!-- /content -->
+	</div><!-- /page -->
+	
+	
+	
+	<!-- addLeads -->
+	<div data-role="page" id="addLeads" data-theme="b">
+			<div data-role="header" data-position="inline">
+				<a href="#profile" data-rel="back">back</a>
+				<h1>Dodgeball</h1>
+			</div><!-- /header -->
+			<div data-role="content" data-theme="c">
+				<div data-role="fieldcontain">
+					<input type="text" name="name" id="name" placeholder="Name" required>
+					<input type="email" name="email" id="email" placeholder="Email" required>
+					<input type="tel" name="workPhone" id="workPhone" placeholder="Work Phone" required>
+					<input type="tel" name="mobilePhone" id="mobilePhone" placeholder="Mobile Phone">
+					<input type="text" name="company" id="company" placeholder="Company" required>
+					<input type="text" name="address" id="address" placeholder="Address">
+					<textarea cols="40" rows="8" name="notes" id="notes" placeholder="Notes"></textarea>
+					<a href="index.html" data-role="button" input-type="submit" data-theme="b">Submit</a>
+				</div>
+			</div>
+		</div><!-- /content -->
+	</div><!-- /page -->
+
+	<!-- Leads -->
+	<div data-role="page" id="leads" data-theme="b">
+		<div data-role="header" data-position="inline">
+			<a href="#profile" data-rel="back">back</a>
+			<h1>Dodgeball</h1>
+		</div><!-- /header -->
+			<ul data-role="listview" data-filter="true">
+				<li data-role="list-divider">B</li>
+				<li>
+					<a href="#biebs"><img src="img/biebs.png" alt="biebs" width="80" height="80" />
+					<h2>Justin Bieber</h2>
+					<p><b>Interscope</b></p>
+					<p>Singer</p>
+					</a>
+				</li>
+				<li data-role="list-divider">G</li>
+				<li>
+					<a href="#gaga"><img src="img/gaga.png" alt="gaga" width="80" height="80" />
+					<h2>Lady GaGa</h2>
+					<p><b>Interscope</b></p>
+					<p>Singer</p>
+					</a>
+				</li>
+				<li data-role="list-divider">K</li>
+				<li>
+					<a href="#kanye"><img src="img/kanye.png" alt="kanye" width="80" height="80" />
+					<h2>Kanye West</h2>
+					<p><b>GOOD Music</b></p>
+					<p>Hip Hop</p>
+					</a>
+				</li>
+				<li data-role="list-divider">Z</li>
+				<li>
+					<a href="#"><img src="img/jz.png" alt="jz" width="80" height="80" />
+					<h2>Jay Z</h2>
+					<p><b>Roc-A-Fella Records</b></p>
+					<p>Hip Hop</p>
+					</a>
+				</li>
+			</ul>
+		</div><!-- /content -->
+	</div><!-- /page -->
+	
+	
+	<!-- biebs -->
+	<div data-role="page" id="biebs" data-theme="b" class="profile">
+		<div data-role="header" data-position="inline">
+			<a href="#leads" data-rel="back">back</a>
+			<h1>Dodgeball</h1>
+		</div><!-- /header -->
+		<div data-role="content" data-scroll="true" data-theme="c">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><img src="img/biebs.png" alt="bibs" width="80" height="80" /></div>
+				<div class="ui-block-b">
+					<h2>Justin Bieber</h2>
+					<p>Interscope</p>
+					<p>Singer</p>
+				</div>	   
+			</fieldset>
+			<a href="mailto:justinbieber@gmail.com" data-role="button" data-theme="c">Email</a>
+			<a href="tel:555-555-5555" data-role="button" data-theme="c" >Call</a>
+		</div>
+	</div><!-- /content -->
+	</div><!-- /page -->
+
+</body>
+</html>
