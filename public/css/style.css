@@ -14,8 +14,8 @@ input:nth-of-type(1) { margin: -10px 0 0 0; }
 input { margin: 15px 0 0 0; }
 textarea { margin: 15px 0 15px 0; }
 =======
-div#teammates h2 { margin: -2px 0 10px 0;}
-div#teammates p { margin: 0px;}
+div#teammates h2, div#leads h2 { margin: -2px 0 10px 0;}
+div#teammates p, div#leads p { margin: 0px;}
 
 #score_board {
 width: 50%;
