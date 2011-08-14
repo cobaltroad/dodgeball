@@ -1,0 +1,29 @@
+<h1>Listing sales</h1>
+
+<table>
+  <tr>
+    <th>Product name</th>
+    <th>Sale amount in cents</th>
+    <th>Notes</th>
+    <th>Player</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.product_name %></td>
+    <td><%= sale.sale_amount_in_cents %></td>
+    <td><%= sale.notes %></td>
+    <td><%= sale.player.name %></td>
+    <td><%= link_to 'Show', sale %></td>
+    <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+    <td><%= link_to 'Destroy', sale, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sale', new_sale_path %>

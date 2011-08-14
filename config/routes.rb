@@ -1,4 +1,6 @@
 Hackathon::Application.routes.draw do
+  resources :sales
+
   resources :leads
 
   resources :rules
