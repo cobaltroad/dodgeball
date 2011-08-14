@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<p><%= @rule.object_type %></p>
+<p><%= @rule.rule_type %></p>
+<p><%= @rule.trigger %></p>
+<p><%= @rule.threshold %></p>
+<p><%= @rule.points %></p>
 
 <%= link_to 'Edit', edit_rule_path(@rule) %> |
 <%= link_to 'Back', rules_path %>

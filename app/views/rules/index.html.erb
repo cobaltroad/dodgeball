@@ -2,6 +2,11 @@
 
 <table>
   <tr>
+    <th>Object</th>
+    <th>Rule Type</th>
+    <th>Trigger Field</th>
+    <th>Threshold</th>
+    <th>Points</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +14,11 @@
 
 <% @rules.each do |rule| %>
   <tr>
+    <td><%= rule.object_type %></td>
+    <td><%= rule.rule_type %></td>
+    <td><%= rule.trigger %></td>
+    <td><%= rule.threshold %></td>
+    <td><%= rule.points %></td>
     <td><%= link_to 'Show', rule %></td>
     <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
     <td><%= link_to 'Destroy', rule, :confirm => 'Are you sure?', :method => :delete %></td>
