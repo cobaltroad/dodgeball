@@ -13,6 +13,7 @@
 	$.get("http://dodgeball.heroku.com/players/1.json", function(data){
 	$('#name').append(data.player.name);
 	$('#player_role').append(data.player.role);  
+	$('#player_points').append(data.player.points);  
 	});	
 	
 	$.get("http://dodgeball.heroku.com/teams/1.json", function(data){
@@ -52,16 +53,53 @@
 			<div id="clear"></div>
 			<div id="score_board">
 				<p>You</p>
-				<h2 id="team_1_points"></p>
+				<h2 id="team_1_points"></h2>
 			</div>	
 			
 			<div id="score_board">
 				<p>Them</p>
-				<h2 id="team_2_points"></p>
+				<h2 id="team_2_points"></h2>
 			</div>
 			
 			
 			<div id="clear"></div>
+			
+			<div id="stats">
+				<h2>Your Stats</h2>
+				<div style="float:left;font-weight:normal">
+				# Leads Inputed<br/>
+				# Partial Leads<br/>
+				Your Score<br/>
+				Current Rank<br/>
+				</div>
+				<div style="float:right;font-weight:bold">
+				1<br/>
+				0<br/>
+				<div id="player_points"></div>
+				1<br/>
+				</div>
+				<div id="clear"></div>
+			</div>
+			<br/>
+			<div id="stats">
+				<h2>Team Stats</h2>
+				<div style="float:left;font-weight:normal">
+				# Leads Inputed<br/>
+				# Partial Leads<br/>
+				Closed Sales Amount<br/>
+				Team Score<br/>
+				</div>
+				<div style="float:right;font-weight:bold;text-align:right">
+				9<br/>
+				20<br/>
+				$90,000<br/>
+				<div id="team_1_points"></div><br/>
+				</div>
+				<div id="clear"></div>			
+			</div>
+			
+			<div id="clear"></div>
+			<br/>
 		
 			<a href="#teammates" data-role="button" data-theme="b" >Team Mates</a>
 			<a href="#leads" data-role="button" data-theme="b" >Leads</a>
@@ -212,7 +250,7 @@
 			<a href="mailto:ladygaga@gmail.com" data-role="button" data-theme="c">Email</a>
 			<a href="tel:555-555-5555" data-role="button" data-theme="c" >Call</a>
 		</div>
-	</div><!-- /content -->
+	
 	</div><!-- /page -->
 	
 	<!-- Jay Z -->
@@ -233,7 +271,7 @@
 			<a href="mailto:jz@gmail.com" data-role="button" data-theme="c">Email</a>
 			<a href="tel:555-555-5555" data-role="button" data-theme="c" >Call</a>
 		</div>
-	</div><!-- /content -->
+	
 	</div><!-- /page -->
 
 	<!-- Kanye West -->
@@ -254,7 +292,7 @@
 			<a href="mailto:kanye@gmail.com" data-role="button" data-theme="c">Email</a>
 			<a href="tel:555-555-5555" data-role="button" data-theme="c" >Call</a>
 		</div>
-	</div><!-- /content -->
+
 	</div><!-- /page -->
 
 	
