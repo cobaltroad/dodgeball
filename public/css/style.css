@@ -19,14 +19,14 @@ div#teammates p { margin: 0px;}
 
 #score_board {
 margin: 0px auto;
-padding: 0;
-text-align: center;
+padding: 0px;	
 }
 
 #score_board ul li{
 list-style: none;
 max-width: 50%;
 float: left;
+text-align: center;
 }
 
 #score_board span {
