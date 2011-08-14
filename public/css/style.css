@@ -1,0 +1,10 @@
+div#profile .ui-grid-a .ui-block-a { width: 33%; margin-right: 20px;}
+div#profile ui-grid-a .ui-block-b { width: 66%;}
+div#profile h2 { width: 200px; margin-top: 3px; }
+div#profile p:nth-of-type(1) { font-size: 15px; font-weight: bold; margin-top: -15px; text-indent: 7px;}
+div#profile p:nth-of-type(2) { font-size: 14px; margin-top: -10px; text-indent: 7px;}
+.center { margin: 0 auto; padding: 0; text-align: center;}
+
+.ui-listview-filter { margin: 0px;}
+div#teammates h2 { margin: -2px 0 10px 0;}
+div#teammates p { margin: 0px;}
