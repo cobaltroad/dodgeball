@@ -1,26 +1,22 @@
-<h1>Listing players</h1>
+<div data-role="header">
+  <h1>Players</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Role</th>
-    <th>Player Points (Team Points)</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div data-role="content" id="teammates" data-theme="b">
+  <ul data-role="listview" data-filter="true">
+    <% @players.each do |player| %>
+        <li>
+          <h2><%= player.name %></h2>
+          <p><strong><%= player.team.nil? ? "Unassigned" : player.team.name %></strong></p>
+          <%= player.role %>&nbsp;
+          <%= player.points %>&nbsp;
+          <%= link_to 'Edit', edit_player_path(player), "data-icon" => "gear" %>
+          <%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %>
+        </li>
+    <% end %>
+  </ul>
 
-<% @players.each do |player| %>
-  <tr>
-    <td><h3><%= player.name %></h3></td>
-    <td><em><%= player.role %></em></td>
-    <td><em><%= player.points %> (<%= player.team.nil? ? "Unassigned" : player.team.points %>)</em></td>
-    <td><em><%= link_to 'Edit', edit_player_path(player) %></em></td>
-    <td><em><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></em></td>
-  </tr>
-<% end %>
-</table>
+  <br />
 
-<br />
-
-<%= link_to 'New Player', new_player_path %>
+  <%= link_to 'New Player', new_player_path %>
+</div>

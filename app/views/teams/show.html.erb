@@ -1,10 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div data-role="header">
+  <h1><%= @team.name %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @team.name %>
-</p>
+<div data-role="content">
+  <ul data-role="listview">
+    <% @team.players.each do |player| %>
+    <li>
+      <h2 class="center"><%= link_to player.name, player %></h2>
+      <h2 class="points center"><%= player.points %></h2>
+    </li>
+    <% end %>
+  </ul>
 
-
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+  <%#= link_to 'Edit', edit_team_path(@team) %>
+</div>

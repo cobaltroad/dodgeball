@@ -1,31 +1,23 @@
-<h1>Listing leads</h1>
+<div data-role="header">
+  <h1>Leads</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Notes</th>
-    <th>Player</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div data-role="content">
+  <ul data-role="listview">
+    <% @leads.each do |lead| %>
+    <li>
+        <h2 class="center"><%= lead.name %></h2>
+        <p><%= lead.phone %></p>
+        <p><%= lead.email %></p>
+        <p><%= lead.notes %></p>
+        <p>Salesperson: <%= lead.player.name %></p>
+      <%= link_to 'Show', lead %>
+      <%= link_to 'Edit', edit_lead_path(lead), "data-icon" => "gear" %>
+      <%= link_to 'Destroy', lead, :confirm => 'Are you sure?', :method => :delete %>
+    </li>
+    <% end %>
+  </ul>
 
-<% @leads.each do |lead| %>
-  <tr>
-    <td><%= lead.name %></td>
-    <td><%= lead.phone %></td>
-    <td><%= lead.email %></td>
-    <td><%= lead.notes %></td>
-    <td><%= lead.player.name %></td>
-    <td><%= link_to 'Show', lead %></td>
-    <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
-    <td><%= link_to 'Destroy', lead, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Lead', new_lead_path %>
+  <br />
+  <%= link_to 'New Lead', new_lead_path %>
+</div>

@@ -1,25 +1,19 @@
-<h1>Listing teams</h1>
+<div data-role="header">
+  <h1>Teams</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Points</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div data-role="content">
+  <ul data-role="listview">
+    <% @teams.each do |team| %>
+    <li>
+      <h2 class="center"><%= team.name %></h2>
+      <h2 class="points center"><%= team.points %></h2>
+      <%= link_to 'Show', team %>
+      <%= link_to 'Edit', edit_team_path(team), "data-icon" => "gear" %>
+      <%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %>
+    </li>
+    <% end %>
+  </ul>
 
-<% @teams.each do |team| %>
-  <tr>
-    <td><%= team.name %></td>
-    <td><%= team.points %></td>
-    <td><%= link_to 'Show', team %></td>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Team', new_team_path %>
+  <%#= link_to 'New Team', new_team_path %>
+</div>

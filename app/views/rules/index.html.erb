@@ -1,31 +1,23 @@
-<h1>Listing rules</h1>
+<div data-role="header">
+  <h1>Listing rules</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Object</th>
-    <th>Rule Type</th>
-    <th>Trigger Field</th>
-    <th>Threshold</th>
-    <th>Points</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div data-role="content">
+  <ul data-role="listview">
+    <% @rules.each do |rule| %>
+    <li>
+      <%= rule.object_type %>&nbsp;
+      <%= rule.rule_type %>&nbsp;
+      <%= rule.trigger %>&nbsp;
+      <%= rule.threshold %>&nbsp;
+      <%= rule.points %>&nbsp;
+      <%= link_to 'Show', rule %>
+      <%= link_to 'Edit', edit_rule_path(rule), "data-icon" => "gear" %>
+      <%= link_to 'Destroy', rule, :confirm => 'Are you sure?', :method => :delete %>
+    </li>
+    <% end %>
+  </ul>
 
-<% @rules.each do |rule| %>
-  <tr>
-    <td><%= rule.object_type %></td>
-    <td><%= rule.rule_type %></td>
-    <td><%= rule.trigger %></td>
-    <td><%= rule.threshold %></td>
-    <td><%= rule.points %></td>
-    <td><%= link_to 'Show', rule %></td>
-    <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
-    <td><%= link_to 'Destroy', rule, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <%= link_to 'New Rule', new_rule_path %>
+</div>
 
-<br />
-
-<%= link_to 'New Rule', new_rule_path %>
