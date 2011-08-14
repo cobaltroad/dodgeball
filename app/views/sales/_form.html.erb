@@ -24,6 +24,11 @@
     <%= f.text_area :notes %>
   </div>
   <div class="field">
+    <%= f.label :positive_feedback %><br />
+    <%= f.check_box :positive_feedback %>
+  </div>
+
+  <div class="field">
     <%= f.label :player %><br />
     <%= f.collection_select(:player_id, Player.all, :id, :name) %>
   </div>

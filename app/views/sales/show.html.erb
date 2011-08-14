@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>Positive Feedback:</b>
+  <%= @sale.positive_feedback? %>
+</p>
+
+<p>
   <b>Notes:</b>
   <%= @sale.notes %>
 </p>
@@ -19,6 +24,7 @@
   <b>Player:</b>
   <%= @sale.player.name %>
 </p>
+
 
 
 <%= link_to 'Edit', edit_sale_path(@sale) %> |
